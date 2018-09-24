@@ -18,7 +18,8 @@ public class MiprimerJava {
     public static void main(String[] args) {
 
 // ahora voy a poner una linea que hace el hola mundo
-// TODO code application logic here
+// T code application logic here
+// despoues de hacer pool
     }
 
 }
