@@ -21,22 +21,55 @@ public class Notas {
     int nota = sc.nextInt();
 
     // comprobar si es par
-    if (nota >= 5) {
-      if (nota >= 9) {
-	System.out.println("NOTABLE");
-      } else if (nota >= 7) {
-	System.out.println("SOBRE");
-      } else {
-	System.out.println("SUFICIENTE");
-      }
-
-    } else if (nota < 5) {
+    if ((nota >= 5) && (nota < 7)) {
+      System.out.println("SUFICIENTE");
+    } else if ((nota >= 7) && (nota < 9)) {
+      System.out.println("NOTA");
+    } else if ((nota >= 9) && (nota <= 10)) {
+      System.out.println("SOBRE");
+    } else if ((nota < 5) && (nota >= 0)) {
       System.out.println("SUSPENSO");
     } else if ((nota > 10) || (nota < 0)) {
       System.out.println("nota no valida");
     }
 
     //sacar resultado
+    if ((nota > 10) || (nota < 0)) {
+      System.out.println("nota no valida");
+    } else if (nota >= 9) {
+      System.out.println("SOBRE");
+    } else if (nota >= 7) {
+      System.out.println("NOTA");
+    } else if (nota >= 5) {
+      System.out.println("SUFICIENTE");
+    } else if (nota < 5) {
+      System.out.println("SUSPENSO");
+    }
+
+    switch (nota) {
+      case 0:
+      case 1:
+      case 2:
+      case 3:
+      case 4:
+	System.out.println("suspenso");
+	break;
+
+    }
+
+    
+    String sNota = "SOBRESALIENTE";
+    switch (sNota) {
+      case "SOBRESALIENTE":
+	System.out.println("tienes un 9 o 10");
+	break;
+      case "NOTABLE":
+	System.out.println("suspenso");
+	break;
+
+    }
+
+    
   }
 
 }
