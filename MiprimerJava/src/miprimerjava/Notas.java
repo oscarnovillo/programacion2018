@@ -46,29 +46,6 @@ public class Notas {
       System.out.println("SUSPENSO");
     }
 
-    switch (nota) {
-      case 0:
-      case 1:
-      case 2:
-      case 3:
-      case 4:
-	System.out.println("suspenso");
-	break;
-
-    }
-
-    
-    String sNota = "SOBRESALIENTE";
-    switch (sNota) {
-      case "SOBRESALIENTE":
-	System.out.println("tienes un 9 o 10");
-	break;
-      case "NOTABLE":
-	System.out.println("suspenso");
-	break;
-
-    }
-
     
   }
 
