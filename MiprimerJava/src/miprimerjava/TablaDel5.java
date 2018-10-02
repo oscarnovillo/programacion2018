@@ -5,24 +5,40 @@
  */
 package miprimerjava;
 
+import java.util.Scanner;
+
 /**
  *
  * @author oscar
  */
 public class TablaDel5 {
-  
+
   public static void main(String[] args) {
-    
-    
+
+    Scanner sc = new Scanner(System.in);
+
+    System.out.print("pon la tabla de que numero: ");
+    int numeroTabla = sc.nextInt();
+    sc.nextLine();
+    System.out.print("pon hasta que numero la tabla: ");
+    int numeroHasta = sc.nextInt();
+    sc.nextLine();
     int numero = 0;
-    
-    while (numero  <= 10)
-    {
-      System.out.println(" 5 X "+numero 
-	      +" = "+(numero*5));
-      numero ++;
+
+    while (numero <= numeroHasta) {
+      System.out.println(numeroTabla + " X " + numero
+	      + " = " + (numero * numeroTabla));
+      numero+=2;
     }
     
+    for (int i=0; (i<=numeroHasta) 
+	    ;i++)
+    {
+      System.out.println(numeroTabla + " X " + i
+	      + " = " + (i * numeroTabla));
+    }
+    
+
   }
-  
+
 }
