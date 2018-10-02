@@ -28,7 +28,7 @@ public class TablaDel5 {
     while (numero <= numeroHasta) {
       System.out.println(numeroTabla + " X " + numero
 	      + " = " + (numero * numeroTabla));
-      numero+=2;
+      numero++;
     }
     
     for (int i=0; (i<=numeroHasta) 
