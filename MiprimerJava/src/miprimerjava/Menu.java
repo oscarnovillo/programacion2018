@@ -74,5 +74,11 @@ public class Menu {
 
   public static void suma20(Scanner sc) {
 
+    
+    int i;
+   
+    
+    for (i=0;i<4;i++){}
+    
   }
 }
