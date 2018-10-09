@@ -29,7 +29,7 @@ public class NumeroAleatorio {
     System.out.println(r.nextInt(10) + 1);
     System.out.println(r.nextInt(10) + 1);
     System.out.println(r.nextInt(10) + 1);
-    System.out.println(r.nextInt(10) + 1);
+    System.out.println(r.nextInt(10) + 1+ "\n");
 
   }
 
