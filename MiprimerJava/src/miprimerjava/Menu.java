@@ -21,7 +21,7 @@ public class Menu {
       System.out.println(
 	      "1. problema que clacula los numeros de la primitiva\n"
 	      + "2. suma 20 numeros y los resta para que de 0\n"
-	      + "3. para salir\n"
+	      + "3. para salir o lo que quieras\n"
 	      + "que opcion quieres????");
       opcion = sc.nextInt();
       sc.nextLine();
