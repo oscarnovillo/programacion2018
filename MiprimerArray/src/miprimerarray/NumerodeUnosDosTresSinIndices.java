@@ -11,35 +11,26 @@ import java.util.Scanner;
  *
  * @author oscar
  */
-public class NumerodeUnosDosTres {
+public class NumerodeUnosDosTresSinIndices {
 
   public static void main(String[] args) {
-
-    int veces[] = new int[3];
-    for (int i = 0,j =veces.length-1
-	    ; i < veces.length; 
-	    i++,j--) {
-      veces[i] = 0;
-    }
-
     int numero;
     Scanner sc = new Scanner(System.in);
-    do {
+    int veces[] = new int[10];
+    for (int i = 0; i < veces.length; i++) {
       System.out.print("Pon un numero:");
       numero = sc.nextInt();
-      if ((numero < 4) && (numero >0)) {
-	veces[numero - 1]++;
-      }
-
-    } while (numero != -1);
-
-    for (int i = 0; i < veces.length; i++) {
-      System.out.println(" numero de "+(i+1)+" = "+veces[i]);
+      veces[i] = numero;
     }
 
-    
-    
-    
+    int contador[] = new int[3];
+    for (int i = 0; i < veces.length; i++) {
+
+      if ((veces[i] >= 1) && (veces[i] <= 3)) {
+	contador[veces[i] - 1]++;
+      }
+    }
+
   }
 
 }
