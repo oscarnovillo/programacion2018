@@ -8,6 +8,8 @@ import org.junit.jupiter.api.DisplayName;
 
 import org.junit.jupiter.api.Test;
 
+import com.mycompany.testproject.SieteyMedia;
+
 @DisplayName("A special test case")
 public class FirstJUnit5Tests {
 
@@ -19,5 +21,13 @@ public class FirstJUnit5Tests {
 	() -> assertTrue(false));
 	
     }
+    
+   @Test
+   public void main()
+   {
+	   
+	   SieteyMedia.main(null);
+	   
+   }
 
 }
