@@ -15,8 +15,8 @@ public class FirstJUnit5Tests {
     @DisplayName("mi primera prueba")
     public void myFirstTest() {
         assertEquals(2, 1 + 1);
-	assertAll("nombre" ,
-	() -> assertTrue(true));
+	assertAll("nombkkkre" ,
+	() -> assertTrue(false));
 	
     }
 
