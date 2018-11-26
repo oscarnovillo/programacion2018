@@ -9,6 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.mycompany.testproject.SieteyMedia;
+import java.io.ByteArrayInputStream;
 
 @DisplayName("A special test case")
 public class FirstJUnit5Tests {
@@ -25,6 +26,8 @@ public class FirstJUnit5Tests {
    @Test
    public void main()
    {
+	   ByteArrayInputStream in = new ByteArrayInputStream("2\n".getBytes());
+	   System.setIn(in);
 	   
 	   SieteyMedia.main(null);
 	   

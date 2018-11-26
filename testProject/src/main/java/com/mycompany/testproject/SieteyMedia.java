@@ -61,7 +61,7 @@ public class SieteyMedia {
 			}
 
 			// ver condiciones de finalización
-		} while (sumaJugador <= 7.5 && opcion != 1);
+		} while (sumaJugador <= 7.5 && opcion != 2);
 		// jugar maquina
 		// sacar cartas hasta que gane o pierda
 		double sumaIA = 0;
