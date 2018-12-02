@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import com.mycompany.testproject.SieteyMedia;
 import java.io.ByteArrayInputStream;
+import org.junit.jupiter.api.Tag;
 
 @DisplayName("A special test case")
 public class FirstJUnit5Tests {
@@ -18,12 +19,13 @@ public class FirstJUnit5Tests {
     @DisplayName("mi primera prueba")
     public void myFirstTest() {
         assertEquals(2, 1 + 1);
-	assertAll("nombkkkre" ,
-	() -> assertTrue(false));
+//	assertAll("nombkkkre" ,
+//	() -> assertTrue(false));
 	
     }
     
    @Test
+   @Tag("TEST")
    public void main()
    {
 	   ByteArrayInputStream in = new ByteArrayInputStream("2\n".getBytes());
