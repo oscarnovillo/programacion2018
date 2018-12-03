@@ -12,19 +12,18 @@
   </properties>
     
   <dependencies>
-    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>8.0.13</version>
-    </dependency>
-<!-- https://mvnrepository.com/artifact/io.takari/incrementalbuild -->
-<dependency>
-    <groupId>io.takari</groupId>
-    <artifactId>incrementalbuild</artifactId>
-    <version>0.20.7</version>
-</dependency>
 
-      
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-core</artifactId>
+      <version>1.3</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 </project>
