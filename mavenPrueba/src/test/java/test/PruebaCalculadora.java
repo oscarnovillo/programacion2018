@@ -5,7 +5,6 @@ package test;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import calculadora.Calculadora;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -26,19 +25,14 @@ import org.junit.jupiter.params.provider.ValueSource;
 @DisplayName("A special test case")
 public class PruebaCalculadora {
 
-  
-
   // TODO add test methods here.
   // The methods must be annotated with annotation @Test. For example:
   //
- @ParameterizedTest
-  @CsvSource( {"1,1","2,2" })
-  public void hello(int num,int num2) {
+  @Test
+  public void hello() {
     Calculadora c = new Calculadora();
-    assertEquals(num+num2, c.suma(num, num2));
-  
+    assertEquals(2, c.suma(1, 1));
+
   }
-  
-  
+
 }
-  

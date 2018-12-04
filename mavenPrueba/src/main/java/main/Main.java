@@ -8,7 +8,7 @@ public class Main {
    
     Calculadora c = new Calculadora();
     
-    System.out.println(c.suma(1, 1));
+    System.out.println(c.suma(5, 6));
     
   }
 
