@@ -11,41 +11,35 @@ package modelo;
  */
 public class Celda {
 
-  // bomba valor = 0;  
+  // bomba valor = -1;  
   private int valor;
-  private boolean tapado;
+  private boolean visible;
   private boolean marcado;
 
-  public Celda()
-  {
-    tapado = true;
-  }
-  
-  
-  public boolean esBomba() {
-
-    return false;
-  }
-
   public int getValor() {
-    return 0;
+    return valor;
   }
 
-  public String imprimir() {
-    String devolver = null;
-    if (tapado) {
-      devolver = "-";
-    } else if (marcado) {
-      devolver = "M";
-    } else {
-      if (valor == 0) {
-	devolver = "B";
-      } else {
-	devolver = valor + "";
-      }
-    }
-
-    return devolver;
+  public void setValor(int valor) {
+    this.valor = valor;
   }
 
+  public boolean isVisible() {
+    return visible;
+  }
+
+  public void setVisible(boolean visible) {
+    this.visible = visible;
+  }
+
+  public boolean isMarcado() {
+    return marcado;
+  }
+
+  public void setMarcado(boolean marcado) {
+    this.marcado = marcado;
+  }
+
+  
+  
 }
