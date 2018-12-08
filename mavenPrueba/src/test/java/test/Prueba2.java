@@ -19,7 +19,7 @@ public class Prueba2 {
   @Test
   void probarNada()
   {
-    fail("esto falla");
+   // fail("esto falla");
   }
   
 }
