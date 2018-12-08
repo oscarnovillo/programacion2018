@@ -15,5 +15,8 @@ public class Calculadora {
   {
     return a+b;
   }
-  
+  public int resta(int a, int b)
+  {
+    return a-b;
+  }
 }

@@ -35,8 +35,8 @@ public class Buscaminas {
       System.out.println("");
       for (int j = 0;
 	      j < tablero.getDimensionY(); j++) {
-	System.out.print(
-		tablero.getCelda(i, j).imprimir());
+	//System.out.print(
+		//tablero.getCelda(i, j).imprimir());
       }
     }
 
