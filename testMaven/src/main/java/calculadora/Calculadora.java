@@ -13,7 +13,15 @@ public class Calculadora {
   
   public int suma(int a, int b)
   {
-    return a+b;
+    int resultado = a+b;
+
+    if (a<0 || b<0)
+      resultado = -1;
+    else
+      if (resultado <0)
+	resultado = -1;
+    
+    return resultado;
   }
   
 }
