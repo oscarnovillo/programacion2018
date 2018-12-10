@@ -17,10 +17,7 @@ public class Calculadora {
 
     if (a<0 || b<0)
       resultado = -1;
-    else
-      if (resultado <0)
-	resultado = -1;
-    
+   
     return resultado;
   }
   public int resta(int a, int b)

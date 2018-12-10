@@ -6,8 +6,13 @@
 package test;
 
 import calculadora.Calculadora;
+
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -19,22 +24,42 @@ import org.junit.jupiter.api.Test;
  */
 @DisplayName("me llamo juan")
 public class PruebaCalculadora {
+  Calculadora c ;
+  
+  @BeforeEach
+  void cargarCalculadora()
+  {
+    c = new Calculadora();
+  }
   
   @Test
   @DisplayName(" hola")
   @Tag("calculadora")
   public void pruebaSuma()
   {
-    Calculadora c = new Calculadora();
+    
     int resultado = c.suma(8,8);
-    assertEquals(16,resultado);
-    assertNotEquals(-16,resultado);
+//    assertAll(
+//    		() -> {
+//    			int r = c.suma(8,8);
+//    			assertEquals(6,r)},
+//    		() -> assertEquals(6,resultado)
+//    		)
+//    ;
+   
+    resultado = c.suma(-1, 5);
+    assertEquals(-1,resultado);
+    resultado = c.suma(5, -1);
+    assertEquals(-1,resultado);
+    resultado = c.suma(-5, -1);
+    assertEquals(-1,resultado);
   }
   
+
   @Test
   public void pruebaResta()
   {
-    Calculadora c = new Calculadora();
+    
     int resultado = c.resta(8,8);
     assertEquals(0,resultado);
     
