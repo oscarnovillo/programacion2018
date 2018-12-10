@@ -5,7 +5,6 @@
  */
 package main;
 
-import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -23,8 +22,6 @@ public class ArrayNumeros {
     int numero = sc.nextInt();
     
     int array[] = new int[numero];
-    int array2[] = {numero, 2, 3, 4};
-
     for (int i = 0; i < array.length; i++) {
       array[i] = 1;
     }
@@ -42,6 +39,7 @@ public class ArrayNumeros {
 
     }
     System.out.println(")");
+    sc.close();
 
   }
 

@@ -8,15 +8,21 @@ package test;
 import calculadora.Calculadora;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 /**
  *
  * @author oscar
  */
+@DisplayName("me llamo juan")
 public class PruebaCalculadora {
   
   @Test
+  @DisplayName(" hola")
+  @Tag("calculadora")
   public void pruebaSuma()
   {
     Calculadora c = new Calculadora();
@@ -29,7 +35,7 @@ public class PruebaCalculadora {
   public void pruebaResta()
   {
     Calculadora c = new Calculadora();
-    int resultado = c.suma(8,8);
+    int resultado = c.resta(8,8);
     assertEquals(0,resultado);
     
   }
