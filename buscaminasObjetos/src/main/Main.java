@@ -6,6 +6,7 @@
 package main;
 
 import java.util.Random;
+import java.util.Scanner;
 import modelo.Celda;
 import servicios.Buscaminas;
 
@@ -29,12 +30,14 @@ public class Main {
     //mostrar tablero
     //fin de juego.
     // aqui a lo cutre
-    int[][] tablero;
+    Celda[][] tablero;
+    
     int dimX = 8;
     int dimY = 8;
     int nMinas = 10;
 
-    tablero = new int[dimX][dimY];
+    tablero = new Celda[dimX][dimY];
+    
 
     // ponemos las minas;
     Random r = new Random();
@@ -44,12 +47,12 @@ public class Main {
       do {
 	x = r.nextInt(dimX);
 	y = r.nextInt(dimY);
-      } while (tablero[x][y] == -1);
-      tablero[x][y] = -1;
+      } while (tablero[x][y].getValor() == -1);
+      tablero[x][y].setValor(-1);
     }
     for (int i = 0; i < tablero.length; i++) {
       for (int j = 0; j < tablero[i].length; j++) {
-	if (tablero[i][j] != -1) {
+	if (tablero[i][j].getValor() != -1) {
 	  int numMinas = 0;
 	  for (int x = i - 1; x <= i + 1; x++) {
 	    for (int y = j - 1; y <= j + 1; y++) {
@@ -57,59 +60,79 @@ public class Main {
 		if (x >= 0 && x < tablero[i].length
 			&& y >= 0 && y < tablero[i].length
 			//			&& (x != i && y != j)
-			&& tablero[x][y] == -1) {
+			&& tablero[x][y].getValor() == -1) {
 		  numMinas++;
 		}
 	      }
 	    }
 	  }
 
-//	  if  ( (i-1 >=0 && j+1 <tablero[i].length)
-//	     && (tablero[i - 1][j + 1] == -1)) {
-//	    numMinas++;
-//	  }
-//	  if ( (j+1 <tablero[i].length)
-//	     && (tablero[i][j + 1] == -1) )  {
-//	    numMinas++;
-//	  }
-//	  if ( (i+1 <tablero[i].length) && (j+1 <tablero[i].length)
-//	     && tablero[i + 1][j + 1] == -1) {
-//	    numMinas++;
-//	  }
-//	  if (i-1 >=0 && j-1>=0 && tablero[i - 1][j - 1] == -1) {
-//	    numMinas++;
-//	  }
-//	  if (j-1>=0 && tablero[i][j - 1] == -1) {
-//	    numMinas++;
-//	  }
-//	  if ((i+1 <tablero[i].length) && j-1>=0 &&  tablero[i + 1][j - 1] == -1) {
-//	    numMinas++;
-//	  }
-//	  if (i-1 >=0 && tablero[i - 1][j] == -1) {
-//	    numMinas++;
-//	  }
-////	if (tablero[i][j]==-1)
-////	  numMinas++;
-//	  if ((i+1 <tablero[i].length) && tablero[i + 1][j] == -1) {
-//	    numMinas++;
-//	  }
-	  tablero[i][j] = numMinas;
+	  tablero[i][j].setValor(numMinas);
 	}
 
       }
+    }
+    imprimirDebugTablero(tablero);
+
+    // voy a dar a celda
+    System.out.println(" numeros");
+    Scanner sc = new Scanner(System.in);
+    int x = sc.nextInt();
+    int y = sc.nextInt();
+    if (tablero[x][y].getValor() == 0) {
+      mirarCelda(x, y, tablero);
+    } else {
+      tablero[x][y].setVisible(true); 
     }
     imprimirTablero(tablero);
 
   }
 
-  public static void imprimirTablero(int[][] tablero) {
+  public static void imprimirDebugTablero(Celda[][] tablero) {
     for (int i = 0; i < tablero.length; i++) {
       System.out.println("");
       for (int j = 0; j < tablero[i].length; j++) {
-	if (i > 4) {
+
+	System.out.printf("%3d", tablero[i][j].getValor());
+
+      }
+    }
+    System.out.println("");
+  }
+
+  public static void imprimirTablero(Celda[][] tablero) {
+    for (int i = 0; i < tablero.length; i++) {
+      System.out.println("");
+      for (int j = 0; j < tablero[i].length; j++) {
+	if (!tablero[i][j].isVisible()) {
 	  System.out.printf("%3s", "-");
 	} else {
-	  System.out.printf("%3d", tablero[i][j]);
+	  System.out.printf("%3d", tablero[i][j].getValor());
+	}
+      }
+    }
+    System.out.println("");
+  }
+
+  public static void mirarCelda(int x, int y, Celda[][] tablero) {
+
+    tablero[x][y].setVisible(true);
+
+    for (int i = x - 1; i <= x + 1; i++) {
+      for (int j = y - 1; j <= y + 1; j++) {
+	// si no es la misma celda
+	if (!(i == x && j == y)) {
+	  // si no se sale del tablero
+	  if (i >= 0 && i < tablero[x].length
+		  && j >= 0 && j < tablero[y].length) {
+	    //si no es 0
+	    if (tablero[i][j].getValor() > 0) {
+	      tablero[i][j].setVisible(true);
+	    } else if (tablero[i][j].getValor() == 0 
+		    && !tablero[i][j].isVisible() ) {
+	      mirarCelda(i, j, tablero);
+	    }
+	  }
 	}
       }
     }

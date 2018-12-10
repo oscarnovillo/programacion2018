@@ -30,15 +30,15 @@ public class Buscaminas {
 
   public void mostrarTablero() {
     // coger Celdas e imprimirlas.
-    for (int i = 0;
-	    i < tablero.getDimensionX(); i++) {
-      System.out.println("");
-      for (int j = 0;
-	      j < tablero.getDimensionY(); j++) {
-	System.out.print(
-		tablero.getCelda(i, j).imprimir());
-      }
-    }
+//    for (int i = 0;
+//	    i < tablero.getDimensionX(); i++) {
+//      System.out.println("");
+//      for (int j = 0;
+//	      j < tablero.getDimensionY(); j++) {
+//	System.out.print(
+//		tablero.getCelda(i, j).imprimir());
+//      }
+//    }
 
   }
 
