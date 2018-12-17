@@ -86,7 +86,7 @@ public class JavaArrays {
   public static void Ejercicio1(Scanner read) {
     int[] numeros = new int[5];
 
-    Scanner teclado = new Scanner(System.in);
+   
     for (int i = 0; i < numeros.length; i++) {
       System.out.println("Dime los numeros, " + (i + 1));
 
@@ -104,11 +104,11 @@ public class JavaArrays {
   public static void Ejercicio2(Scanner read) {
     int[] numeros = new int[5];
 
-    Scanner teclado = new Scanner(System.in);
+    
     for (int i = 0; i < numeros.length; i++) {
       System.out.println("Dime los numeros, " + (i + 1));
 
-      numeros[i] = teclado.nextInt();
+      numeros[i] = read.nextInt();
 
     }
     int i;
