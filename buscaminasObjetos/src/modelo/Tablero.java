@@ -11,14 +11,14 @@ package modelo;
  */
 public class Tablero {
 
-  private Celda [][]tablero;
+  private Celda [][]celdas;
   
   private int dimX;
 
   public Tablero(int dimX, int dimY)
   {
     this.dimX = dimX;
-    tablero = new Celda[dimX][dimY];
+    celdas = new Celda[dimX][dimY];
     
     crearCeldas();
   }
@@ -27,29 +27,30 @@ public class Tablero {
   {
     for (int i = 0; i < this.getDimensionX(); i++) {
       for (int j = 0; j < this.getDimensionY(); j++) {
-	tablero[i][j] = new Celda();
+	celdas[i][j] = new Celda();
       }
     }
   }
   
   public int getDimensionX()
   {
-    return tablero[0].length;
+    return celdas[0].length;
   }
   public int getDimensionY()
   {
-    return tablero.length;
+    return celdas.length;
+  }
+
+  public Celda[][] getCeldas() {
+    return celdas;
+  }
+
+  public void setCeldas(Celda[][] celdas) {
+    this.celdas = celdas;
   }
   
 
-  public Celda[][] getTablero() {
-    return tablero;
-  }
-
-  public void setTablero(
-	  Celda[][] tablero) {
-    this.tablero = tablero;
-  }
+ 
   
   
   
