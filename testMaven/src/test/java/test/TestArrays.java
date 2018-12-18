@@ -5,7 +5,11 @@
  */
 package test;
 
-import static org.junit.Assert.assertEquals;
+
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -16,6 +20,7 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.Random;
 import java.util.Scanner;
 import main.JavaArrays;
 import org.junit.jupiter.api.DisplayName;
@@ -35,7 +40,7 @@ public class TestArrays {
 	@Test 
 	void testEjercicio1()  {
 
-		String entrada = "1\n2\n89\n4\n5\n";
+		String entrada = "1\r\n2\r\n89\r\n4\r\n5\r\n";
 		
 		final ByteArrayInputStream input 
 		= new ByteArrayInputStream(entrada.getBytes());
@@ -53,12 +58,44 @@ public class TestArrays {
 		String sOut = myOut.toString();
 
 		System.out.println(myOut.toString());
-
-		assertEquals("Dime los numeros, 1\n"+ 
-				"Dime los numeros, 2\nDime los numeros, 3\nDime los numeros, 4\n"+
-				"Dime los numeros, 5\n"+
-				entrada, sOut);
+	
+		
+		assertEquals(entrada, sOut.substring(sOut.indexOf("5")+3));
 		
 	}
 
+	@Test
+	void ejercicio6()
+	{
+		
+		int ta[] = {1,2,3,4,5,6,7,8,9,10,11,12};
+		int tb[] = {1,2,3,4,5,6,7,8,9,10,11,12};
+
+		int resultado[] = {1,2,3,1,2,3,4,5,6,4,5,6,7,8,9,7,8,9,10,11,12,10,11,12};
+		
+		int mezcla[] = JavaArrays.doEjercicio6(ta, tb);
+		
+		assertArrayEquals(resultado, mezcla);
+	}
+	
+	@Test
+	void testMain()
+	{
+		final ByteArrayInputStream input 
+		= new ByteArrayInputStream("1\n1\n2\n89\n4\n5\n".getBytes());
+		System.setIn(input);
+
+		PrintStream outOld = System.out;
+
+		final ByteArrayOutputStream myOut = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(myOut));
+		JavaArrays.main(null);
+		System.setOut(outOld);
+		
+		String sOut = myOut.toString();
+
+		assertNotEquals(-1, sOut.indexOf("EJERCICIO 1"));
+		
+	}
+	
 }
