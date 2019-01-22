@@ -9,13 +9,15 @@ package daw.listas;
  *
  * @author oscar
  */
-public class Alumno {
+public class Alumno{
     
     public String nombre;
 
     public Alumno(String nombre) {
         this.nombre = nombre;
     }
+
+
     
     
     
