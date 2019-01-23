@@ -9,8 +9,8 @@ package Main;
  *
  * @author oscar
  */
-public enum DiasSemana {
-    
-    LXV, MJ;
-    
+public enum TipoNumero {
+  
+  IMPAR,PAR;
+  
 }

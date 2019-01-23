@@ -9,8 +9,9 @@ package Main;
  *
  * @author oscar
  */
-public enum DiasSemana {
-    
-    LXV, MJ;
-    
+public enum Horarios {
+  
+  h1010,h1100,h1200
+
+  
 }

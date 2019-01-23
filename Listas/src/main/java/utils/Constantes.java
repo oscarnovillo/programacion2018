@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Main;
+package utils;
 
 /**
  *
  * @author oscar
  */
-public enum DiasSemana {
-    
-    LXV, MJ;
-    
+public class Constantes {
+  
+  public static final String DIAS_SEMANA_LXV = "LXV";
+  public static final int PLAZAS_POR_DEFECTO = 45;
+  
+
 }
