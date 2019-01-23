@@ -16,6 +16,7 @@ import modelo.Tapete;
  */
 public class Solitario {
 
+  
   public void jugar() {
     Tapete tapete = new Tapete();
     boolean seguir = true;
