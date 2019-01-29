@@ -24,6 +24,19 @@ public class Main {
 
     enteros.add(8);
 
+    boolean ok = true;
+    Boolean b = new Boolean(true);
+    Integer entero =  new Integer(20);
+   
+    b=false;
+    entero = 56 + entero;
+    
+    if (ok == b)
+    {
+      
+    } 
+    // A partir de aqui lo util para el polideportivo
+    
     ArrayList<Alumno> listaAlumnos = new ArrayList();
 
     Alumno a1 = new Alumno("1");
@@ -36,6 +49,13 @@ public class Main {
     //tamaño de la lista
     System.out.println(listaAlumnos.size());
 
+    int tam = listaAlumnos.size();
+    for (int i=0; i<tam; i++)
+      listaAlumnos.remove(0);
+    
+    listaAlumnos.clear();
+    
+    
     Alumno temp = listaAlumnos.get(0);
     System.out.println(temp);
     temp = listaAlumnos.get(2);
@@ -47,6 +67,13 @@ public class Main {
     for (int i = 0; i < listaAlumnos.size(); i++) {
       System.out.println(listaAlumnos.get(i));
     }
+    
+    for (Alumno a : listaAlumnos)
+    {
+      System.out.println(a);
+    }
+    
+    
 
     System.out.println(listaAlumnos.contains(a2));
     System.out.println(listaAlumnos.indexOf(a3));

@@ -14,5 +14,7 @@ public class Constantes {
   public static final String DIAS_SEMANA_LXV = "LXV";
   public static final int PLAZAS_POR_DEFECTO = 45;
   
+  public static final String ACTIVIDAD_AEROBIC = "aerobic";
+  
 
 }
