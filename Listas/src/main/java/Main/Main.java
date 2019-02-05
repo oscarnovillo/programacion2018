@@ -25,7 +25,7 @@ public class Main {
     enteros.add(8);
 
     boolean ok = true;
-    Boolean b = new Boolean(true);
+    Boolean b = true;
     Integer entero =  new Integer(20);
    
     b=false;
@@ -88,6 +88,7 @@ public class Main {
     
      System.out.println("indice de manera lista");
     System.out.println(listaAlumnos.indexOf(buscar));
+    
     buscar.setDireccion("nueva");
     
     int index = listaAlumnos.indexOf(buscar);

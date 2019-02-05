@@ -56,9 +56,6 @@ public class Alumno{
     if (!Objects.equals(this.nombre, other.nombre)) {
       return false;
     }
-    if (!Objects.equals(this.direccion, other.direccion)) {
-      return false;
-    }
     return true;
   }
 
