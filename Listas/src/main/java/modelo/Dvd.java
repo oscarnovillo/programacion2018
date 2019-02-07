@@ -9,7 +9,20 @@ package modelo;
  *
  * @author oscar
  */
-public class Dvd {
+public class Dvd extends Prestable{
+
+  public Dvd(String director, String tejuelo, String titulo) {
+    super(tejuelo, titulo);
+    this.director = director;
+  }
+
+
+
+  @Override
+  public String toString() {
+    return "Dvd{" + "director=" + director 
+	    +super.toString()+"}";
+  }
   
   private String director;
 

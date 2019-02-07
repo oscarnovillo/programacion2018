@@ -9,11 +9,29 @@ package modelo;
  *
  * @author oscar
  */
-public class Prestable {
+public abstract class Prestable {
   
   private String tejuelo;
   private String titulo;
 
+  public Prestable(String tejuelo, String titulo) {
+    this.tejuelo = tejuelo;
+    this.titulo = titulo;
+  }
+
+  public Prestable() {
+  }
+  
+  
+
+  
+  
+  
+  public void prestar(){
+    
+  }
+  
+  
   public String getTejuelo() {
     return tejuelo;
   }
@@ -29,5 +47,12 @@ public class Prestable {
   public void setTitulo(String titulo) {
     this.titulo = titulo;
   }
+
+  @Override
+  public String toString() {
+    return "Prestable{" + "tejuelo=" + tejuelo + ", titulo=" + titulo + '}';
+  }
+  
+  
   
 }

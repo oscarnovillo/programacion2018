@@ -9,7 +9,7 @@ package modelo;
  *
  * @author oscar
  */
-public class Libro {
+public class Libro extends Prestable{
   
 private String autor;
 
@@ -19,6 +19,11 @@ private String autor;
 
   public void setAutor(String autor) {
     this.autor = autor;
+  }
+
+  @Override
+  public String toString() {
+    return "Libro{" + "autor=" + autor + '}';
   }
 
   

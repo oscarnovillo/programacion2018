@@ -9,10 +9,17 @@ package modelo;
  *
  * @author oscar
  */
-public class Revista {
+public class Revista extends Prestable{
+
+  @Override
+  public String toString() {
+    return "Revista{" + "coleccion=" + coleccion + '}';
+  }
   
   private String coleccion;
 
+  
+  
   public String getColeccion() {
     return coleccion;
   }
