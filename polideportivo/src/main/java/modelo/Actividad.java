@@ -5,6 +5,8 @@
  */
 package modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author oscar
@@ -16,8 +18,7 @@ public class Actividad {
   private String horario;
   private int plazas;
   private double coste;
-  private Alumno[] alumnos;
-  private int plazasOcupadas;
+  private ArrayList<Alumno> alumnos;
 
   public Actividad(String tipo, String dias, String horario, int plazas, double coste) {
     this.tipo = tipo;
@@ -25,8 +26,8 @@ public class Actividad {
     this.horario = horario;
     this.plazas = plazas;
     this.coste = coste;
-    this.plazasOcupadas = 0;
-    this.alumnos = new Alumno[plazas];
+
+    this.alumnos = new ArrayList<>();
   }
 
   public String getTipo() {
@@ -70,50 +71,36 @@ public class Actividad {
   }
 
   public int getPlazasOcupadas() {
-    return plazasOcupadas;
+    return this.alumnos.size();
   }
 
   public boolean darAltaAlumno(Alumno a) {
     boolean ok = true;
-    
-    if (plazasOcupadas < plazas)
-    {
-      this.alumnos[plazasOcupadas] = a;
-      plazasOcupadas ++;
+
+    if (this.alumnos.contains(a)) {
+      System.out.println("alumno ya existe");
+    } else {
+      if (this.alumnos.size() < plazas) {
+	this.alumnos.add(a);
+      } else {
+	ok = false;
+      }
     }
-    else
-      ok = false;
-    
 
     return ok;
   }
 
   public boolean darBajaAlumno(Alumno a) {
     boolean ok = false;
-    if (plazasOcupadas > 0)
-    {
-      // buscarle
-      for (int i=0; i<plazasOcupadas && !ok; i++)
-      {
-	if (this.alumnos[i].getNombre().equals(a.getNombre()) &&
-	this.alumnos[i].getApellido().equals(a.getApellido()))
-	{  
-	  this.alumnos[i] = this.alumnos[plazasOcupadas-1];
-	  this.alumnos[plazasOcupadas-1] = null;
-	  plazasOcupadas--;
-	  ok = true;
-	}
-      }
+    if (this.alumnos.isEmpty()) {
+      ok = this.alumnos.remove(a);
     }
-    
-    
-
     return ok;
   }
 
   @Override
   public String toString() {
-    return "Actividad{" + "tipo=" + tipo + ", dias=" + dias + ", horario=" + horario + ", coste=" + coste + ", plazasOcupadas=" + plazasOcupadas + '}';
+    return "Actividad{" + "tipo=" + tipo + ", dias=" + dias + ", horario=" + horario + ", coste=" + coste + ", plazasOcupadas=" + this.alumnos.size() + '}';
   }
 
 }

@@ -5,6 +5,9 @@
  */
 package modelo;
 
+import java.util.ArrayList;
+import java.util.Objects;
+
 /**
  *
  * @author oscar
@@ -13,14 +16,12 @@ public class Alumno {
 
   private String nombre;
   private String apellido;
-  private Actividad[] actividades;
-  private int nActividades;
+  private ArrayList<Actividad> actividades;
 
   public Alumno(String nombre, String apellido) {
     this.nombre = nombre;
     this.apellido = apellido;
-    this.nActividades = 0;
-    this.actividades = new Actividad[11];
+    this.actividades = new ArrayList<>();
   }
 
   public String getNombre() {
@@ -40,22 +41,25 @@ public class Alumno {
   }
 
   public boolean addActividad(Actividad a) {
-    boolean ok = true;
-    if (nActividades < 11) {
-      this.actividades[nActividades] = a;
-      nActividades++;
+    boolean ok;
+    if (!this.actividades.contains(a)) {
+      ok = this.actividades.add(a);
     } else {
       ok = false;
     }
-
     return ok;
   }
 
   public double calcularRecibo() {
     double recibo = 0;
-    for (int i = 0; i < nActividades; i++) {
-      recibo += this.actividades[i].getCoste();
+    for (int i = 0; i < this.actividades.size(); i++) {
+      recibo += this.actividades.get(i).getCoste();
     }
+
+    for (Actividad a : this.actividades) {
+      recibo += a.getCoste();
+    }
+
     return recibo;
   }
 
@@ -64,9 +68,8 @@ public class Alumno {
 
     // poner a null todas y 
     // desmatricular de las actividades
-    for (int i = 0; i < nActividades; i++) {
-      this.actividades[i].darBajaAlumno(this);
-      this.actividades[i] = null;
+    for (Actividad a : this.actividades) {
+      a.darBajaAlumno(this);
     }
 
     return ok;
@@ -76,6 +79,35 @@ public class Alumno {
   @Override
   public String toString() {
     return "Alumno{" + "nombre=" + nombre + ", apellido=" + apellido + '}';
+  }
+
+  @Override
+  public int hashCode() {
+    int hash = 7;
+    hash = 79 * hash + Objects.hashCode(this.nombre);
+    hash = 79 * hash + Objects.hashCode(this.apellido);
+    return hash;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    final Alumno other = (Alumno) obj;
+    if (!Objects.equals(this.nombre, other.nombre)) {
+      return false;
+    }
+    if (!Objects.equals(this.apellido, other.apellido)) {
+      return false;
+    }
+    return true;
   }
 
 }
