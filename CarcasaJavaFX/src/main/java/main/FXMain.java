@@ -27,8 +27,8 @@ public class FXMain extends Application {
   public void start(Stage primaryStage) throws IOException {
     
     FXMLLoader loaderMenu = 
-	    new FXMLLoader(getClass().getResource("/fxml/FXMLPrincipal.fxml"));
-    AnchorPane root = loaderMenu.load();
+	    new FXMLLoader(getClass().getResource("/fxml/FXMLTuPutaMadre.fxml"));
+    BorderPane root = loaderMenu.load();
     
     Scene scene = new Scene(root);
     

@@ -24,18 +24,32 @@ public class FXMLPrincipalController implements Initializable {
   @FXML
   private TextField fxTxtNombre;
 
+  
+  private FXMLTuPutaMadreController tuputoPadre;
+
+  public void setTuputoPadre(FXMLTuPutaMadreController tuputoPadre) {
+    this.tuputoPadre = tuputoPadre;
+  }
+  
+  
   @FXML
   public void clickBoton(ActionEvent event) {
 
-    Alert alert = new Alert(AlertType.INFORMATION);
-    alert.setTitle("Information Dialog");
-    alert.setHeaderText(null);
-    alert.setContentText("Hola "+fxTxtNombre.getText());
-    
-    alert.showAndWait();
-   
+//    Alert alert = new Alert(AlertType.INFORMATION);
+//    alert.setTitle("Information Dialog");
+//    alert.setHeaderText(null);
+//    alert.setContentText("Hola "+fxTxtNombre.getText());
+//    
+//    alert.showAndWait();
+    tuputoPadre.setNombre(fxTxtNombre.getText());
+    tuputoPadre.cargarPag2();
   }
 
+  public void resetear()
+  {
+    fxTxtNombre.setText(null);
+  }
+  
   /**
    * Initializes the controller class.
    */
