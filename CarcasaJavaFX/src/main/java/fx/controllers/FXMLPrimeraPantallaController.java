@@ -19,37 +19,29 @@ import javafx.scene.control.TextField;
  *
  * @author oscar
  */
-public class FXMLPrincipalController implements Initializable {
-
+public class FXMLPrimeraPantallaController implements Initializable {
+  
   @FXML
   private TextField fxTxtNombre;
-
   
-  private FXMLTuPutaMadreController tuputoPadre;
-
-  public void setTuputoPadre(FXMLTuPutaMadreController tuputoPadre) {
-    this.tuputoPadre = tuputoPadre;
+  private FXMLBorderPaneController borderPane;
+  
+  public void setBorderPane(FXMLBorderPaneController borderPane) {
+    this.borderPane = borderPane;
   }
-  
   
   @FXML
   public void clickBoton(ActionEvent event) {
-
-//    Alert alert = new Alert(AlertType.INFORMATION);
-//    alert.setTitle("Information Dialog");
-//    alert.setHeaderText(null);
-//    alert.setContentText("Hola "+fxTxtNombre.getText());
-//    
-//    alert.showAndWait();
-    tuputoPadre.setNombre(fxTxtNombre.getText());
-    tuputoPadre.cargarPag2();
-  }
-
-  public void resetear()
-  {
-    fxTxtNombre.setText(null);
+    
+    borderPane.setNombre(fxTxtNombre.getText());
+    borderPane.getPag2Controller().addCombo(fxTxtNombre.getText());
+    borderPane.cargarPag2();
   }
   
+  public void resetear() {
+    fxTxtNombre.setText(null);
+  }
+
   /**
    * Initializes the controller class.
    */
@@ -58,5 +50,5 @@ public class FXMLPrincipalController implements Initializable {
     // TODO
     fxTxtNombre.setPromptText("lo he cambiado por codigo");
   }
-
+  
 }

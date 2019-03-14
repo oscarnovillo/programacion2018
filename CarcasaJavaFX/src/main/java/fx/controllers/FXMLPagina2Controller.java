@@ -6,11 +6,15 @@
 package fx.controllers;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
+import jdk.nashorn.internal.runtime.arrays.ArrayLikeIterator;
 
 /**
  * FXML Controller class
@@ -19,33 +23,62 @@ import javafx.scene.control.Alert;
  */
 public class FXMLPagina2Controller implements Initializable {
 
-  
-  private FXMLTuPutaMadreController principalController;
+  @FXML
+  private ComboBox fxComboDatos;
 
-  public void setPrincipalController(FXMLTuPutaMadreController principalController) {
+  private FXMLBorderPaneController principalController;
+
+  public void setPrincipalController(FXMLBorderPaneController principalController) {
     this.principalController = principalController;
   }
-  
-  
-   @FXML
+
+  @FXML
+  public void changeCombo(ActionEvent event) {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle("Information Dialog");
+    alert.setHeaderText(null);
+    alert.setContentText("Seleccion de combo "
+	    + fxComboDatos.getSelectionModel().getSelectedItem());
+
+    alert.showAndWait();
+
+  }
+
+  public void addCombo(Object o) {
+    fxComboDatos.getItems().add(o);
+  }
+ 
+  public void addCombo(Collection c) {
+    fxComboDatos.getItems().addAll(c);
+  }
+
+  @FXML
   public void clickBoton(ActionEvent event) {
 
     Alert alert = new Alert(Alert.AlertType.INFORMATION);
     alert.setTitle("Information Dialog");
     alert.setHeaderText(null);
-    alert.setContentText("Hola desde Pag 2" + 
-	    principalController.getNombre());
-    
+    alert.setContentText("Hola desde Pag 2"
+	    + principalController.getNombre());
+
     alert.showAndWait();
-   
+
+    ArrayList<String> strings = new ArrayList<>();
+
+    strings.add("uno");
+    strings.add("dos");
+    strings.add("tres");
+
+    fxComboDatos.getItems().addAll(strings);
+
   }
-  
+
   /**
    * Initializes the controller class.
    */
   @Override
   public void initialize(URL url, ResourceBundle rb) {
     // TODO
-  }  
-  
+  }
+
 }

@@ -23,7 +23,7 @@ import javafx.scene.layout.BorderPane;
  *
  * @author oscar
  */
-public class FXMLTuPutaMadreController implements Initializable {
+public class FXMLBorderPaneController implements Initializable {
 
   @FXML
   private BorderPane fxRoot;
@@ -45,8 +45,13 @@ public class FXMLTuPutaMadreController implements Initializable {
   
   private AnchorPane pagPrincipal;
   private AnchorPane pag2;
-  private FXMLPrincipalController principalController;
+  private FXMLPrimeraPantallaController principalController;
   private FXMLPagina2Controller pag2Controller; 
+
+
+  public FXMLPagina2Controller getPag2Controller() {
+    return pag2Controller;
+  }
 
   @FXML
   public void cargar1(ActionEvent event) {
@@ -58,16 +63,16 @@ public class FXMLTuPutaMadreController implements Initializable {
     try {
       if (pagPrincipal == null) {
 	FXMLLoader loaderMenu
-		= new FXMLLoader(getClass().getResource("/fxml/FXMLPrincipal.fxml"));
+		= new FXMLLoader(getClass().getResource("/fxml/FXMLPrimeraPantalla.fxml"));
 	pagPrincipal = loaderMenu.load();
 	principalController = loaderMenu.getController();
-	principalController.setTuputoPadre(this);
+	principalController.setBorderPane(this);
       }
       principalController.resetear();
       fxRoot.setCenter(pagPrincipal);
 
     } catch (Exception ex) {
-      Logger.getLogger(FXMLTuPutaMadreController.class.getName()).log(Level.SEVERE, null, ex);
+      Logger.getLogger(FXMLBorderPaneController.class.getName()).log(Level.SEVERE, null, ex);
     }
   }
 
@@ -80,7 +85,7 @@ public class FXMLTuPutaMadreController implements Initializable {
       pag2Controller = loaderMenu.getController();
       pag2Controller.setPrincipalController(this);
     } catch (Exception ex) {
-      Logger.getLogger(FXMLTuPutaMadreController.class.getName()).log(Level.SEVERE, null, ex);
+      Logger.getLogger(FXMLBorderPaneController.class.getName()).log(Level.SEVERE, null, ex);
     }
   }
 	
