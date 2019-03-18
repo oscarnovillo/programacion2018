@@ -15,6 +15,7 @@
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#cargar1" text="caqrgarPantalla 1" />
                   <MenuItem mnemonicParsing="false" onAction="#cargar2" text="load window 2" />
+		  <MenuItem mnemonicParsing="false" onAction="#cargarAbrirSobre" text="abrir Sobre" />
               </items>
             </Menu>
          </menus>
