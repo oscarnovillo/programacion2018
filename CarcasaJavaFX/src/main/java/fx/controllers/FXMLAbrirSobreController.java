@@ -24,42 +24,37 @@ public class FXMLAbrirSobreController implements Initializable {
   private ComboBox<String> fxComboNiñato;
   @FXML
   private ComboBox fxComboAlbum;
-  
-  
-  
-   private FXMLBorderPaneController principalController;
+
+  private FXMLBorderPaneController principalController;
 
   public void setPrincipalController(FXMLBorderPaneController principalController) {
     this.principalController = principalController;
   }
-  
-  public void cargarNiñatos(ArrayList<String> niñatos)
-  {
+
+  public void cargarNiñatos(ArrayList<String> niñatos) {
     fxComboNiñato.getItems().clear();
     fxComboNiñato.getItems().addAll(niñatos);
   }
-  
-  
+
   @FXML
-  public void cambiaNiñato(ActionEvent event)
-  {
-    String seleccion = 
-	    fxComboNiñato.getSelectionModel()
+  public void cambiaNiñato(ActionEvent event) {
+    String seleccion
+	    = fxComboNiñato.getSelectionModel()
 		    .getSelectedItem();
-    
-    ArrayList<String> albums = principalController.dameAlbumsNiñato(seleccion);
-    fxComboAlbum.getItems().clear();
-    fxComboAlbum.getItems().addAll(albums);
+    if (seleccion != null) {
+      ArrayList<String> albums = principalController.dameAlbumsNiñato(seleccion);
+      fxComboAlbum.getItems().clear();
+      fxComboAlbum.getItems().addAll(albums);
+    }
   }
-  
+
   /**
    * Initializes the controller class.
    */
   @Override
   public void initialize(URL url, ResourceBundle rb) {
     // TODO
-    
-    
-  }  
-  
+
+  }
+
 }

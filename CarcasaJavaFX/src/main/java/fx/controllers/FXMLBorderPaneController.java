@@ -69,13 +69,12 @@ public class FXMLBorderPaneController implements Initializable {
 
 	abrirSobreController = loaderMenu.getController();
 	abrirSobreController.setPrincipalController(this);
+	ArrayList<String> niños = new ArrayList<>();
+	niños.add("j");
+	niños.add("p");
+	niños.add("k");
+	abrirSobreController.cargarNiñatos(niños);
       }
-
-      ArrayList<String> niños = new ArrayList<>();
-      niños.add("j");
-      niños.add("p");
-      niños.add("k");
-      abrirSobreController.cargarNiñatos(niños);
 
       fxRoot.setCenter(abrirSobre);
 
