@@ -60,10 +60,50 @@ public class TestArrays {
 		System.out.println(myOut.toString());
 	
 		
-		assertEquals(entrada, sOut.substring(sOut.indexOf("5")+3));
+		assertEquals(entrada, 
+				sOut.substring(sOut.indexOf("5")+3));
 		
 	}
 
+	@Test 
+	void testEjercicio3()  {
+
+		String entrada = "1\r\n2\r\n-3\r\n4\r\n5\r\n";
+		
+		final ByteArrayInputStream input 
+		= new ByteArrayInputStream(entrada.getBytes());
+		System.setIn(input);
+
+		PrintStream outOld = System.out;
+
+		final ByteArrayOutputStream myOut = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(myOut));
+		Scanner sc = new Scanner(System.in);
+		JavaArrays.Ejercicio3(sc);
+
+		System.setOut(outOld);
+		
+		String sOut = myOut.toString();
+
+		System.out.println("SOUT EJERCICIOS 3");
+		System.out.println(myOut.toString());
+	
+		String salida2 = "Positivos: 4\r\nNegativos: 1\r\nCeros: 0\r\nmedia de positivos: 3.0\r\nmedia de negativos: -3.0\r\ncantidad de ceros:  0\r\n";
+		
+		String salida21 = sOut.substring(
+				sOut.indexOf("Positivos"));
+			
+		int indexOfPositivos = sOut.indexOf("Positivos");
+		String numeroPositivos = sOut.substring(
+				indexOfPositivos+11,
+				sOut.indexOf("\r",indexOfPositivos+11));
+		
+		assertEquals(numeroPositivos, 
+				"4");
+		
+	}
+
+	
 	@Test
 	void ejercicio6()
 	{
