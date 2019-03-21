@@ -5,6 +5,7 @@
  */
 package test;
 
+import main.FXMain;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -41,5 +42,8 @@ public class NewEmptyJUnitTest {
   // The methods must be annotated with annotation @Test. For example:
   //
    @Test
-   public void hello() {}
+   public void hello() {
+   FXMain.main(null);
+   
+   }
 }
