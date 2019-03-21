@@ -32,7 +32,6 @@ public class PruebaCalculadora {
   
   @Test
   @DisplayName(" hola")
-  @Tag("calculadora")
   public void pruebaSuma()
   {
     
