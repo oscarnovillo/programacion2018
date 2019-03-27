@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author oscar
  */
-public class Alumno{
+public class Alumno implements Comparable{
     
     private String nombre;
     private String direccion;
@@ -69,6 +69,12 @@ public class Alumno{
   @Override
   public String toString() {
     return "Alumno{" + "nombre=" + nombre + '}';
+  }
+
+  @Override
+  public int compareTo(Object o) {
+    Alumno a = (Alumno)o;
+    return -1*this.nombre.compareTo(a.nombre);
   }
 
   
