@@ -6,10 +6,12 @@
 package Main;
 
 import daw.listas.Alumno;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
+import static java.util.stream.Collectors.toList;
 
 /**
  *
@@ -53,8 +55,10 @@ public class MainMap {
       System.out.println(codigo + " = " + alumnos.get(codigo));
     }
 
-    
-    
+
+    alumnos.values().parallelStream().skip(1).filter((t) -> { return t.getNombre().charAt(0) == 'L';} ).sorted((o1, o2) -> {
+       return o1.getNombre().compareTo(o2.getNombre());
+    }).forEachOrdered(System.out::println);
   }
 
 }
