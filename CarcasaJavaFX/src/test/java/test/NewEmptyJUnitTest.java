@@ -68,5 +68,8 @@ public class NewEmptyJUnitTest {
     public void hello(FxRobot robot) {
         robot.clickOn("#fxMenuP");
         robot.clickOn("#fxMenu");
+        robot.clickOn("#fxBoton");
+        robot.clickOn("#fxBoton");
+        
     }
 }
