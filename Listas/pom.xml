@@ -54,7 +54,7 @@
         <configuration>
                     <includes>
                  <!-- includes all tests, but not in subpackages -->
-                        <include>**/test/*</include>   
+                        <include>test</include>   
                  
                     </includes>
                 </configuration>
