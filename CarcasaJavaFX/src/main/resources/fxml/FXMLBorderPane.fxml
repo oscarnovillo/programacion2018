@@ -11,9 +11,9 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
          <menus>
-            <Menu mnemonicParsing="false" text="primer menu">
+            <Menu mnemonicParsing="false" fx:id="fxMenuP" text="primer menu">
               <items>
-                <MenuItem mnemonicParsing="false" onAction="#cargar1" text="caqrgarPantalla 1" />
+                <MenuItem mnemonicParsing="false" fx:id="fxMenu" onAction="#cargar1" text="caqrgarPantalla 1" />
                   <MenuItem mnemonicParsing="false" onAction="#cargar2" text="load window 2" />
 		  <MenuItem mnemonicParsing="false" onAction="#cargarAbrirSobre" text="abrir Sobre" />
               </items>

@@ -12,7 +12,7 @@
 	    fx:controller="fx.controllers.FXMLPrimeraPantallaController">
   <children>
     <Label layoutX="92.0" layoutY="204.0" prefHeight="17.0" prefWidth="51.0" text="Nombre" />
-    <Button layoutX="217.0" layoutY="247.0" mnemonicParsing="false" onAction="#clickBoton" text="Click!!!" />
+    <Button layoutX="217.0" layoutY="247.0" mnemonicParsing="false" fx:id="fxBoton" onAction="#clickBoton" text="Click!!!" />
       <TextField fx:id="fxTxtNombre" layoutX="168.0" layoutY="200.0" promptText="pon aqui tu nombre" />
   </children>  
   
