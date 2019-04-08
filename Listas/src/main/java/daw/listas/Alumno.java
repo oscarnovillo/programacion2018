@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author oscar
  */
-public class Alumno implements Comparable{
+public class Alumno implements Comparable<Alumno>{
     
     private String nombre;
     private String direccion;
@@ -72,10 +72,12 @@ public class Alumno implements Comparable{
   }
 
   @Override
-  public int compareTo(Object o) {
-    Alumno a = (Alumno)o;
-    return -1*this.nombre.compareTo(a.nombre);
+  public int compareTo(Alumno o) {
+    return this.nombre.compareTo(o.nombre);
   }
+
+
+  
 
   
 

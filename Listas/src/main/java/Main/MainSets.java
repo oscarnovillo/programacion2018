@@ -5,6 +5,7 @@
  */
 package Main;
 
+import daw.listas.Alumno;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -51,6 +52,18 @@ public class MainSets {
       System.out.println(nombre);
     }
     
+    new TreeSet<>(new Comparator(){
+      @Override
+      public int compare(Object o1, Object o2) {
+	String s = (String)o1;
+	String s1 = (String)o2;
+	
+	return -1 * s.compareTo(s1);
+	
+      }
+    });
+    
+    
     List <String> listaOrdenada = new ArrayList(nombres);
     Collections.sort(listaOrdenada, new Comparator(){
       @Override
@@ -65,6 +78,12 @@ public class MainSets {
     for (String s : listaOrdenada) {
       System.out.println(s);
     }
+    
+    
+    Set<Alumno> alumnos = new TreeSet<>();
+    
+    alumnos.add(new Alumno("jj"));
+    
     
   }
 
