@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>UN COMENTARIO</comment>
+<entry key="color">rojo</entry>
+<entry key="clave">valor</entry>
+</properties>
