@@ -24,7 +24,12 @@ public class MainProperties {
     try {
       Properties appProps = new Properties();
       appProps.load(new FileInputStream("config.properties"));
-      System.out.println(appProps.getProperty("clave"));
+      String valores = appProps.getProperty("clave");
+      String[] separados = valores.split(",");
+      
+      System.out.println(separados[0]+" "+separados[1]);
+      
+      
       appProps.setProperty("color", "rojo");
       appProps.storeToXML(new FileOutputStream("config.xml"),"UN COMENTARIO");
     } catch (Exception ex) {

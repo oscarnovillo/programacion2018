@@ -1,3 +1,13 @@
 ## YAML Template.
 ---
 clave: valor
+manzanas: 20
+frutas: 
+  - peras
+  - manzanas
+  - kiwis
+alumnos:
+  - nombre: juan
+    direccion: kk
+  - nombre: pedro
+    direccion: ll

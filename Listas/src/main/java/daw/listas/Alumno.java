@@ -16,6 +16,12 @@ public class Alumno implements Comparable<Alumno>{
     private String nombre;
     private String direccion;
 
+    
+    public Alumno()
+    {
+      
+    }
+    
   public String getNombre() {
     return nombre;
   }
@@ -68,8 +74,10 @@ public class Alumno implements Comparable<Alumno>{
 
   @Override
   public String toString() {
-    return "Alumno{" + "nombre=" + nombre + '}';
+    return "Alumno{" + "nombre=" + nombre + ", direccion=" + direccion + '}';
   }
+
+
 
   @Override
   public int compareTo(Alumno o) {

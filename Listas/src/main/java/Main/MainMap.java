@@ -6,6 +6,7 @@
 package Main;
 
 import daw.listas.Alumno;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -55,8 +56,11 @@ public class MainMap {
       System.out.println(codigo + " = " + alumnos.get(codigo));
     }
 
+    alumnos.values().forEach(System.out::println);
 
-    alumnos.values().parallelStream().skip(1).filter((t) -> { return t.getNombre().charAt(0) == 'L';} ).sorted((o1, o2) -> {
+    alumnos.values().parallelStream().skip(1).
+	    filter((t) -> { return t.getNombre().charAt(0) == 'L';} )
+	    .sorted((o1, o2) -> {
        return o1.getNombre().compareTo(o2.getNombre());
     }).forEachOrdered(System.out::println);
   }

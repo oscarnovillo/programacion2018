@@ -3,5 +3,5 @@
 <properties>
 <comment>UN COMENTARIO</comment>
 <entry key="color">rojo</entry>
-<entry key="clave">valor</entry>
+<entry key="clave">valor,valor2</entry>
 </properties>
