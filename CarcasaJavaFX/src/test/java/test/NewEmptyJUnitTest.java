@@ -8,6 +8,9 @@ package test;
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import main.FXMain;
@@ -68,8 +71,15 @@ public class NewEmptyJUnitTest {
     public void hello(FxRobot robot) {
         robot.clickOn("#fxMenuP");
         robot.clickOn("#fxMenu");
+        
+        ((TextField)robot.lookup("#fxTxtNombre").query()).setText("PROBNADO");
+        robot.sleep(1000);
+        
         robot.clickOn("#fxBoton");
         robot.clickOn("#fxBoton");
+        robot.moveTo("#fxMenuP");
+       robot.lookup("#fxMenuP").query();
+
         
     }
 }
