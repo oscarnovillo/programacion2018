@@ -24,62 +24,104 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.testfx.api.FxRobot;
 import org.testfx.framework.junit5.ApplicationExtension;
 import org.testfx.framework.junit5.Start;
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+import org.junit.jupiter.api.Order;
+
+import fx.controllers.FXMLBorderPaneController;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import javafx.scene.control.Button;
+import org.junit.jupiter.api.TestMethodOrder;
 
 /**
  *
  * @author oscar
  */
 @ExtendWith(ApplicationExtension.class)
+@TestMethodOrder(OrderAnnotation.class)
 public class NewEmptyJUnitTest {
 
-    public NewEmptyJUnitTest() {
-    }
+	public NewEmptyJUnitTest() {
+	}
 
-    @Start
-    private void start(Stage primaryStage) throws IOException {
-        FXMLLoader loaderMenu
-                = new FXMLLoader(getClass().getResource("/fxml/FXMLBorderPane.fxml"));
-        BorderPane root = loaderMenu.load();
+	private static FXMLBorderPaneController rootController;
+	private static BorderPane root;
 
-        Scene scene = new Scene(root);
+	@Start
+	private void start(Stage primaryStage) throws IOException {
 
-        primaryStage.setTitle("Carcasa FX");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
+		FXMLLoader loaderMenu = new FXMLLoader(NewEmptyJUnitTest.class.getResource("/fxml/FXMLBorderPane.fxml"));
+		try {
+			root = loaderMenu.load();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		rootController = loaderMenu.getController();
+		Scene scene = new Scene(root);
 
-    @BeforeAll
-    public static void setUpClass() {
-    }
+		primaryStage.setTitle("Carcasa FX");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
 
-    @AfterAll
-    public static void tearDownClass() {
-    }
+	@BeforeAll
+	public static void setUpClass() {
+		
+		
+		
+	}
 
-    @BeforeEach
-    public void setUp() {
-    }
+	@AfterAll
+	public static void tearDownClass() {
+	}
 
-    @AfterEach
-    public void tearDown() {
-    }
+	@BeforeEach
+	public void setUp() {
+	}
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    @Test
-    public void hello(FxRobot robot) {
-        robot.clickOn("#fxMenuP");
-        robot.clickOn("#fxMenu");
-        
-        ((TextField)robot.lookup("#fxTxtNombre").query()).setText("PROBNADO");
-        robot.sleep(1000);
-        
-        robot.clickOn("#fxBoton");
-        robot.clickOn("#fxBoton");
-        robot.moveTo("#fxMenuP");
-       robot.lookup("#fxMenuP").query();
+	@AfterEach
+	public void tearDown() {
+	}
 
-        
-    }
+	@Test
+	@Order(1)
+	public void jj(FxRobot robot) {
+		robot.clickOn("#fxMenuP");
+		robot.sleep(1000);
+		robot.clickOn("#fxMenu");
+		robot.sleep(1000);
+		assertEquals("test",rootController.probando);
+	}
+
+	// TODO add test methods here.
+	// The methods must be annotated with annotation @Test. For example:
+	//
+	@Test
+	@Order(0)
+	public void hello(FxRobot robot) {
+		robot.clickOn("#fxMenuP");
+		robot.clickOn("#fxMenu");
+
+		((TextField) robot.lookup("#fxTxtNombre").query()).setText("PROBNADO");
+		
+
+		robot.clickOn("#fxBoton");
+		robot.clickOn("#fxBoton");
+		robot.moveTo("#fxMenuP");
+		robot.lookup("#fxMenuP").query();
+                
+                
+               
+               
+		Button b = (Button)robot.lookup(".button").queryAll().stream().filter((t) -> {
+                    return ((Button)t).getText().equals("OK") && ((Button)t).getId() == null ;
+                }).findFirst().get();
+                    
+                robot.clickOn(b);
+		rootController.setNombre("test");
+
+	}
+
 }

@@ -10,7 +10,7 @@
   
    <children>
     <Label layoutX="92.0" layoutY="204.0" prefHeight="17.0" prefWidth="51.0" text="Pagina 2" />
-    <Button layoutX="217.0" layoutY="247.0" mnemonicParsing="false" fx:id="fxBoton" onAction="#clickBoton" text="Click!!!" />
+    <Button layoutX="217.0" layoutY="247.0" mnemonicParsing="false" fx:id="fxBoton" onAction="#clickBoton" text="OK" />
       <ComboBox fx:id="fxComboDatos" layoutX="184.0" layoutY="137.0" onAction="#changeCombo" prefWidth="150.0" promptText="datos" />
       
   </children>  
