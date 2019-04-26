@@ -106,17 +106,16 @@ public class NewEmptyJUnitTest {
 
 		((TextField) robot.lookup("#fxTxtNombre").query()).setText("PROBNADO");
 		
-
+robot.sleep(500);
 		robot.clickOn("#fxBoton");
 		robot.clickOn("#fxBoton");
 		robot.moveTo("#fxMenuP");
 		robot.lookup("#fxMenuP").query();
-                
-                
-               
-               
+		robot.sleep(500);
+                //robot.closeCurrentWindow();
 		Button b = (Button)robot.lookup(".button").queryAll().stream().filter((t) -> {
-                    return ((Button)t).getText().equals("OK") && ((Button)t).getId() == null ;
+                    return ((Button)t).getText().equals("Aceptar") 
+			    && ((Button)t).getId() == null ;
                 }).findFirst().get();
                     
                 robot.clickOn(b);
