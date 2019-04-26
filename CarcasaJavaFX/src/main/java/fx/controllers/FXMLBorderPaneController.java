@@ -37,6 +37,9 @@ public class FXMLBorderPaneController implements Initializable {
     return nombre;
   }
 
+  
+  public String probando;
+  
   public void setNombre(String nombre) {
     this.nombre = nombre;
   }
@@ -149,6 +152,7 @@ public class FXMLBorderPaneController implements Initializable {
     alert.setHeaderText(null);
     preCargarPag2();
     cargarPrincipal();
+    probando  ="test";
   }
 
 }
