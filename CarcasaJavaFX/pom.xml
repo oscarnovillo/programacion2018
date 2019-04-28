@@ -60,6 +60,7 @@
     
   <build>
     <plugins>
+
       <!-- JUnit 5 requires Surefire version 2.22.0 or higher -->
       <plugin>
 	<artifactId>maven-surefire-plugin</artifactId>
@@ -110,7 +111,30 @@
     </plugins>
   </build>
   <profiles>
-    <profile>
+    
+<profile>
+  <id>sonar</id>
+  <properties>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.organization>mincong-h-github</sonar.organization>
+    
+    <sonar.login>8c63ece1d9f1a70ed436178bb4766df05fef4dc2</sonar.login>
+  </properties>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+</profile>
+
+      <profile>
       <id>special-tests</id>
       <build>
 	<plugins>
