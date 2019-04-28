@@ -92,7 +92,7 @@ public class NewEmptyJUnitTest {
         robot.sleep(1000);
         robot.clickOn("#fxMenu");
         robot.sleep(1000);
-        assertEquals("test", rootController.probando);
+//        assertEquals("test", rootController.probando);
     }
 
     // TODO add test methods here.
@@ -105,17 +105,33 @@ public class NewEmptyJUnitTest {
         robot.clickOn("#fxMenu");
 
         ((TextField) robot.lookup("#fxTxtNombre").query()).setText("PROBNADO");
+		((TextField) robot.lookup("#fxTxtNombre").query()).setText("PROBNADO");
+		
+robot.sleep(500);
+		robot.clickOn("#fxBoton");
+		robot.clickOn("#fxBoton");
+		robot.moveTo("#fxMenuP");
+		robot.lookup("#fxMenuP").query();
+		robot.sleep(500);
+                //robot.closeCurrentWindow();
+		Button b = (Button)robot.lookup(".button").queryAll().stream().filter((t) -> {
+                    return ((Button)t).getText().equals("Aceptar") 
+			    && ((Button)t).getId() == null ;
+                }).findFirst().get();
+                    
+                robot.clickOn(b);
+		rootController.setNombre("test");
 
         robot.clickOn("#fxBoton");
         robot.clickOn("#fxBoton");
         robot.moveTo("#fxMenuP");
         robot.lookup("#fxMenuP").query();
 
-        Button b = (Button) robot.lookup(".button").queryAll().stream().filter((t) -> {
-            return ((Button) t).getText().equals("OK") && ((Button) t).getId() == null;
-        }).findFirst().get();
-
-        robot.clickOn(b);
+//        Button b = (Button) robot.lookup(".button").queryAll().stream().filter((t) -> {
+//            return ((Button) t).getText().equals("OK") && ((Button) t).getId() == null;
+//        }).findFirst().get();
+//
+//        robot.clickOn(b);
         rootController.setNombre("test");
 
     }
