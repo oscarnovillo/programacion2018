@@ -26,4 +26,11 @@
                 <sonar.login>8c63ece1d9f1a70ed436178bb4766df05fef4dc2</sonar.login>
             </properties>
         </action>
+        <action>
+            <actionName>CUSTOM-jacoco</actionName>
+            <displayName>jacoco</displayName>
+            <goals>
+                <goal>jacoco:report</goal>
+            </goals>
+        </action>
     </actions>

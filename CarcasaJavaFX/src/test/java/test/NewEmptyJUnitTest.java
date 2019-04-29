@@ -90,8 +90,8 @@ public class NewEmptyJUnitTest {
     public void jj(FxRobot robot) {
         robot.clickOn("#fxMenuP");
         robot.sleep(1000);
-        robot.clickOn("#fxMenu");
-        robot.sleep(1000);
+//        robot.clickOn("#fxMenu");
+//        robot.sleep(1000);
 //        assertEquals("test", rootController.probando);
     }
 
