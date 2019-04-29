@@ -31,7 +31,9 @@ import fx.controllers.FXMLBorderPaneController;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import org.junit.jupiter.api.TestMethodOrder;
 
 /**
@@ -105,34 +107,28 @@ public class NewEmptyJUnitTest {
         robot.clickOn("#fxMenu");
 
         ((TextField) robot.lookup("#fxTxtNombre").query()).setText("PROBNADO");
-		((TextField) robot.lookup("#fxTxtNombre").query()).setText("PROBNADO");
+		
 		
 robot.sleep(500);
 		robot.clickOn("#fxBoton");
 		robot.clickOn("#fxBoton");
-		robot.moveTo("#fxMenuP");
-		robot.lookup("#fxMenuP").query();
 		robot.sleep(500);
                 //robot.closeCurrentWindow();
-		Button b = (Button)robot.lookup(".button").queryAll().stream().filter((t) -> {
-                    return ((Button)t).getText().equals("Aceptar") 
-			    && ((Button)t).getId() == null ;
-                }).findFirst().get();
+                robot.listTargetWindows().stream().forEach((arg0) -> {
                     
-                robot.clickOn(b);
+                });
+//		Button b = (Button)robot.lookup(".button").queryAll().stream().filter((t) -> {
+//                    return ((Button)t).getText().equals("OK") 
+//			    && ((Button)t).getId() == null ;
+//                }).findFirst().get();
+//                    
+//                robot.clickOn(b);
+robot.clickOn("#hola");
+        System.out.println(((Label)robot.lookup("texto").query()).getText());
 		rootController.setNombre("test");
 
-        robot.clickOn("#fxBoton");
-        robot.clickOn("#fxBoton");
-        robot.moveTo("#fxMenuP");
-        robot.lookup("#fxMenuP").query();
+        
 
-//        Button b = (Button) robot.lookup(".button").queryAll().stream().filter((t) -> {
-//            return ((Button) t).getText().equals("OK") && ((Button) t).getId() == null;
-//        }).findFirst().get();
-//
-//        robot.clickOn(b);
-        rootController.setNombre("test");
 
     }
 

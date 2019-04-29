@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import jdk.nashorn.internal.runtime.arrays.ArrayLikeIterator;
 
@@ -35,6 +36,7 @@ public class FXMLPagina2Controller implements Initializable {
   @FXML
   public void changeCombo(ActionEvent event) {
     Alert alert = new Alert(Alert.AlertType.INFORMATION);
+   
     alert.setTitle("Information Dialog");
     alert.setHeaderText(null);
     alert.setContentText("Seleccion de combo "
@@ -57,9 +59,11 @@ public class FXMLPagina2Controller implements Initializable {
 
     Alert alert = new Alert(Alert.AlertType.INFORMATION);
     alert.setTitle("Information Dialog");
+    alert.getDialogPane().lookupButton(ButtonType.OK).setId("hola");
     alert.setHeaderText(null);
     alert.setContentText("Hola desde Pag 2"
 	    + principalController.getNombre());
+   // alert.getDialogPane().getContent().setId("texto");
 
     alert.showAndWait();
 
