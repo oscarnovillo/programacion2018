@@ -107,28 +107,24 @@ public class NewEmptyJUnitTest {
         robot.clickOn("#fxMenu");
 
         ((TextField) robot.lookup("#fxTxtNombre").query()).setText("PROBNADO");
-		
-		
-robot.sleep(500);
-		robot.clickOn("#fxBoton");
-		robot.clickOn("#fxBoton");
-		robot.sleep(500);
-                //robot.closeCurrentWindow();
-                robot.listTargetWindows().stream().forEach((arg0) -> {
-                    
-                });
+
+        robot.sleep(500);
+        robot.clickOn("#fxBoton");
+        robot.clickOn("#fxBoton");
+        robot.sleep(500);
+        //robot.closeCurrentWindow();
+        robot.listTargetWindows().stream().forEach((arg0) -> {
+
+        });
 //		Button b = (Button)robot.lookup(".button").queryAll().stream().filter((t) -> {
 //                    return ((Button)t).getText().equals("OK") 
 //			    && ((Button)t).getId() == null ;
 //                }).findFirst().get();
 //                    
 //                robot.clickOn(b);
-robot.clickOn("#hola");
-        System.out.println(((Label)robot.lookup("texto").query()).getText());
-		rootController.setNombre("test");
-
-        
-
+        robot.clickOn("#hola");
+        System.out.println(((Label) robot.lookup("texto").query()).getText());
+        rootController.setNombre("test");
 
     }
 

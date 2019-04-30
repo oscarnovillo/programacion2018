@@ -59,7 +59,8 @@ public class FXMLPagina2Controller implements Initializable {
 
     Alert alert = new Alert(Alert.AlertType.INFORMATION);
     alert.setTitle("Information Dialog");
-    alert.getDialogPane().lookupButton(ButtonType.OK).setId("hola");
+    alert.getDialogPane().lookupButton(ButtonType.OK)
+            .setId("hola");
     alert.setHeaderText(null);
     alert.setContentText("Hola desde Pag 2"
 	    + principalController.getNombre());
