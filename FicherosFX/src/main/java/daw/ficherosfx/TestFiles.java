@@ -41,6 +41,7 @@ public class TestFiles {
             // escribir al final de un fichero
             Files.asByteSink(f,FileWriteMode.APPEND).write("hola".getBytes("UTF-8"));
             
+            
 
             //leer un fichero
             System.out.println(CharStreams.toString(new FileReader("test.test")));
