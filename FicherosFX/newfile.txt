@@ -1,0 +1,6 @@
+hola2 writerdhola buffered2hola buffered
+hola buffered2
+hola2 writer
+hola buffered
+hola buffered2
+hola2 writer
