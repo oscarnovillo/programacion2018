@@ -12,8 +12,8 @@
       <PatternLayout pattern="${pattern}">
       </PatternLayout>
     </RandomAccessFile>
-     <RollingRandomAccessFile name="RollingRandomAccessFile" fileName="../logs/mi/roll.log"
-                 filePattern="../logs/mi/roll-%d{hh-mm-ss}-%i.log">
+     <RollingRandomAccessFile name="RollingRandomAccessFile" fileName="roll.log"
+                 filePattern="mi/roll-%d{hh-mm-ss}-%i.log">
       <PatternLayout pattern="${pattern}" />
       <Policies>
           <OnStartupTriggeringPolicy />
@@ -25,8 +25,13 @@
  
   <Loggers>
     
+      <Logger name="Main.MainLog" level="ERROR" additivity="false">
+          <AppenderRef ref="RollingRandomAccessFile"/>
+           <AppenderRef ref="Console"/>
+      </Logger>
+      
     <Root level="INFO">
-      <AppenderRef ref="RollingRandomAccessFile"/>
+      <AppenderRef ref="Console"/>
     </Root>
   </Loggers>
 </Configuration>
