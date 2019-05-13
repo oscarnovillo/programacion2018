@@ -1,0 +1,25 @@
+[{
+        "nombre": "pepito",
+        "direccion": null,
+        "saldoCuenta": 280.09,
+        "libros": [{
+                "tejuelo": null,
+                "titulo": null,
+                "autor": "kkk"
+            }, {
+                "tejuelo": null,
+                "titulo": null,
+                "autor": "kkk"
+            }, {
+                "tejuelo": null,
+                "titulo": null,
+                "autor": "kkk"
+            }],
+        "birth": [2019, 5, 13]
+    }, {
+        "nombre": "jose",
+        "direccion": null,
+        "saldoCuenta": null,
+        "libros": [],
+        "birth": null
+    }]

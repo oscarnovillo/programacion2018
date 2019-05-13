@@ -9,7 +9,7 @@ package modelo;
  *
  * @author oscar
  */
-public abstract class Prestable {
+public class Prestable {
   
   private String tejuelo;
   private String titulo;
@@ -20,6 +20,7 @@ public abstract class Prestable {
   }
 
   public Prestable() {
+      
   }
   
   

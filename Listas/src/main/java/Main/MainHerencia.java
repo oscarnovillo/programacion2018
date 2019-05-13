@@ -22,7 +22,7 @@ public class MainHerencia {
     r.setTejuelo("revista");
     r.setColeccion("mihail");
     r.prestar();
-    Libro l = new Libro();
+    Libro l = new Libro("n","n","n");
     l.setTejuelo("libro");
     l.setAutor("pedro");
     l.prestar();
