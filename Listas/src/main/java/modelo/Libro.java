@@ -13,6 +13,11 @@ public class Libro extends Prestable{
   
 private String autor;
 
+    public Libro() {
+    }
+
+
+
     public Libro(String autor, String tejuelo, String titulo) {
         super(tejuelo, titulo);
         this.autor = autor;

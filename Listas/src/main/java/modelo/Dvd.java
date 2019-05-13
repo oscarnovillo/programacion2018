@@ -11,6 +11,9 @@ package modelo;
  */
 public class Dvd extends Prestable{
 
+    public Dvd() {
+    }
+
   public Dvd(String director, String tejuelo, String titulo) {
     super(tejuelo, titulo);
     this.director = director;

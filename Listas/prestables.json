@@ -1,9 +1,1 @@
-[{
-        "tejuelo": "libro",
-        "titulo": "tit",
-        "autor": "jj"
-    }, {
-        "tejuelo": "dvd",
-        "titulo": "tit",
-        "director": "jj"
-    }]
+[{"tejuelo":"libro","titulo":"tit","autor":"jj"},{"tejuelo":"dvd","titulo":"tit","director":"jj"}]

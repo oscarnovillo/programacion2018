@@ -7,6 +7,7 @@ package Main;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import daw.listas.Alumno;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import modelo.Dvd;
 import modelo.Libro;
+import modelo.ListaPrestables;
 import modelo.Prestable;
 
 /**
@@ -34,6 +36,7 @@ public class MainJsonPolimorfico {
         
         
          ObjectMapper mapper = new ObjectMapper();
+         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.registerModule(new JavaTimeModule());
 
         String json = mapper.writeValueAsString(prestables);
@@ -48,6 +51,20 @@ public class MainJsonPolimorfico {
                 new TypeReference<List<Prestable>>() {
         });
         
+        alumnosJson.forEach(System.out::println);
+        
+        
+        ListaPrestables l =  new ListaPrestables();
+        l.setPrestables(prestables);
+        
+        json = mapper.writeValueAsString(l);
+        System.out.println(json);
+        
+        ListaPrestables l1  = mapper.readValue(json,
+                new TypeReference<ListaPrestables>() {
+        });
+        
+        l1.getPrestables().forEach(System.out::println);
         
         
     }
