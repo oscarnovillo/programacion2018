@@ -42,6 +42,7 @@ public class MainJSON {
         Map<String,Alumno> mAl = new LinkedHashMap<String,Alumno>();
 
         mAl.put("1", a);
+        mAl.put("2", a);
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.registerModule(new JavaTimeModule());

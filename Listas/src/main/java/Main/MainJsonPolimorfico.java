@@ -59,6 +59,9 @@ public class MainJsonPolimorfico {
         
         json = mapper.writeValueAsString(l);
         System.out.println(json);
+        mapper.writeValue(
+                Files.newBufferedWriter(Paths.get("prestablesPoli.json")),
+                 l);
         
         ListaPrestables l1  = mapper.readValue(json,
                 new TypeReference<ListaPrestables>() {

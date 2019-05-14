@@ -1,0 +1,13 @@
+{
+    "prestables": [{
+            "@type": "libro",
+            "tejuelo": "libro",
+            "titulo": "tit",
+            "autor": "jj"
+        }, {
+            "@type": "dvd",
+            "tejuelo": "dvd",
+            "titulo": "tit",
+            "director": "jj"
+        }]
+}

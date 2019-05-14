@@ -19,8 +19,8 @@ public class ListaPrestables {
     
     @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY)
     @JsonSubTypes({
-        @Type(value = Libro.class, name = "dog"),
-        @Type(value = Dvd.class, name = "cat")})
+        @Type(value = Libro.class, name = "libro"),
+        @Type(value = Dvd.class, name = "dvd")})
     private List<Prestable> prestables;
 
     public ListaPrestables() {
