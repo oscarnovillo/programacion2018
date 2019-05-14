@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="fxRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxcontrollers.FXMLPrincipalController">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="Menú">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#clickAltaVehiculo" text="Comprar un vehículo" />
+                        <MenuItem mnemonicParsing="false" onAction="#clickVenderVehiculo" text="Vender un vehículo" />
+                        <MenuItem mnemonicParsing="false" onAction="#clickLavarVehiculos" text="Revisar listados y lavados" />
+                        <MenuItem mnemonicParsing="false" onAction="#clickFacturacion" text="Revisar facturación" />
+                        <MenuItem mnemonicParsing="false" onAction="#clickProbarVehiculo" text="Probar un vehículo" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+</BorderPane>

@@ -1,0 +1,15 @@
+11:58:36.251 [main] ERROR Main.MainLog - Traza de informacion
+11:58:36.254 [main] ERROR Main.MainLog -  ERROR DE FICHERO
+java.nio.file.NoSuchFileException: c:\jjjj
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235) ~[?:?]
+	at java.nio.file.Files.newByteChannel(Files.java:373) ~[?:?]
+	at java.nio.file.Files.newByteChannel(Files.java:424) ~[?:?]
+	at java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:420) ~[?:?]
+	at java.nio.file.Files.newInputStream(Files.java:158) ~[?:?]
+	at java.nio.file.Files.newBufferedReader(Files.java:2913) ~[?:?]
+	at java.nio.file.Files.readAllLines(Files.java:3402) ~[?:?]
+	at java.nio.file.Files.readAllLines(Files.java:3442) ~[?:?]
+	at Main.MainLog.main(MainLog.java:24) [classes/:?]
