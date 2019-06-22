@@ -33,4 +33,12 @@
                 <goal>jacoco:report</goal>
             </goals>
         </action>
+        <action>
+            <actionName>CUSTOM-javafx</actionName>
+            <displayName>javafx</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>javafx:run</goal>
+            </goals>
+        </action>
     </actions>
