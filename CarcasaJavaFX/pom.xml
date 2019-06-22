@@ -184,7 +184,9 @@
                 <excludedGroups>prueba</excludedGroups>
             </configuration>
                     </plugin>
-
+                </plugins>
+            </build>
+        </profile>
       <profile>
       <id>special-tests</id>
       <build>

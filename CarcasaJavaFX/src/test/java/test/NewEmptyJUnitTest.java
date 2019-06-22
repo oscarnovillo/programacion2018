@@ -34,6 +34,7 @@ import java.util.Set;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.TestMethodOrder;
 
 /**
@@ -88,6 +89,7 @@ public class NewEmptyJUnitTest {
     }
 
     @Test
+    @Tag("prueba")
     @Order(1)
     public void jj(FxRobot robot) {
         robot.clickOn("#fxMenuP");
@@ -123,7 +125,7 @@ public class NewEmptyJUnitTest {
 //                    
 //                robot.clickOn(b);
         robot.clickOn("#hola");
-        System.out.println(((Label) robot.lookup("texto").query()).getText());
+        //System.out.println(((Label) robot.lookup("texto").query()).getText());
         rootController.setNombre("test");
 
     }

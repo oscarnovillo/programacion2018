@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.Set;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import org.junit.jupiter.api.Tag;
 //import model.Fruta;
 import org.junit.jupiter.api.TestMethodOrder;
 
@@ -42,9 +43,9 @@ import org.junit.jupiter.api.TestMethodOrder;
  */
 @ExtendWith(ApplicationExtension.class)
 @TestMethodOrder(OrderAnnotation.class)
-public class NewEmptyJUnitTestFruteria {
+public class NewEmptyJUnitFruteriaTest {
 
-    public NewEmptyJUnitTestFruteria() {
+    public NewEmptyJUnitFruteriaTest() {
     }
 
     private static FXMLBorderPaneController rootController;
@@ -55,7 +56,7 @@ public class NewEmptyJUnitTestFruteria {
 
         try {
             if (root == null) {
-                FXMLLoader loaderMenu = new FXMLLoader(NewEmptyJUnitTestFruteria.class.getResource("/fxml/FXMLBorderPane.fxml"));
+                FXMLLoader loaderMenu = new FXMLLoader(NewEmptyJUnitFruteriaTest.class.getResource("/fxml/FXMLBorderPane.fxml"));
                 root = loaderMenu.load();
                 rootController = loaderMenu.getController();
                 Scene scene = new Scene(root);
@@ -89,6 +90,7 @@ public class NewEmptyJUnitTestFruteria {
     }
 
     @Test
+    @Tag("prueba")
     @Order(1)
     public void jj(FxRobot robot) {
         robot.clickOn("#fxMenuP");
@@ -106,12 +108,12 @@ public class NewEmptyJUnitTestFruteria {
     @Test
     @Order(0)
     public void hello(FxRobot robot) {
-        robot.clickOn("#fxMenuP");
-        robot.clickOn("#fxMenuAddFruta");
-        ((TextField) robot.lookup("#fxTextNombre").query()).setText("Fruta 1");
-        ((TextField) robot.lookup("#fxTextPrecio").query()).setText("1");
-        ((TextField) robot.lookup("#fxTextKilos").query()).setText("1");
-        robot.clickOn("#btAddFruta");
+//        robot.clickOn("#fxMenuP");
+//        robot.clickOn("#fxMenuAddFruta");
+//        ((TextField) robot.lookup("#fxTextNombre").query()).setText("Fruta 1");
+//        ((TextField) robot.lookup("#fxTextPrecio").query()).setText("1");
+//        ((TextField) robot.lookup("#fxTextKilos").query()).setText("1");
+//        robot.clickOn("#btAddFruta");
 //        Fruta f = rootController.getF().getFrutas().stream().filter((fruta) -> {
 //            return fruta.getNombre().equals("Fruta 1"); //To change body of generated lambdas, choose Tools | Templates.
 //        }).findFirst().get();
